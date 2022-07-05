@@ -1,6 +1,4 @@
 #定义一个空列表，保存学生信息
-from pip._internal.utils.misc import enum
-
 stu_list = []
 
 #0、打印功能菜单
@@ -25,8 +23,8 @@ def add_stu():
     stu_dir["name"] = stu_name
     stu_dir["age"] = stu_age
     stu_dir["sex"] = stu_sex
-
     stu_list.append(stu_dir)
+
 #2、删除学生信息函数
 def del_stu():
     stu_index = int(input("请输入要删除的学生学号:"))
