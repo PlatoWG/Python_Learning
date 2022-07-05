@@ -1,3 +1,4 @@
+import os
 #定义一个空列表，保存学生信息
 stu_list = []
 
@@ -89,12 +90,15 @@ def save_list():
 
 #7、启动程序读取数据文件
 def load_list():
-    stu_file = open("stu_list.txt","r",encoding="utf-8")
-    stu_content = stu_file.read()
-    stu_infos = eval(stu_content)
-    stu_list.extend(stu_infos)
-    print("学生信息已读取到列表")
-    stu_file.close()
+    if os.path.exists("stu_list.txt"):
+        stu_file = open("stu_list.txt","r",encoding="utf-8")
+        stu_content = stu_file.read()
+        stu_infos = eval(stu_content)
+        stu_list.extend(stu_infos)
+        print("学生信息已读取到列表")
+        stu_file.close()
+    else:
+        print("stu_list文件不存在！")
 
 
 
